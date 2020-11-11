@@ -8,3 +8,4 @@ unidecode==1.1.1
 django-cors-headers==3.5.0
 django-heroku==0.3.1
 requests==2.25.0
+wkhtmltopdf==0.2
