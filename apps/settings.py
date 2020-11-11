@@ -29,7 +29,8 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = [
     '*',
     'sepasrvc.intelisis-solutions.com',
-    'sepaweb.herokuapp.com'
+    'sepaweb.herokuapp.com',
+    'intelisisreports.herokuapp.com'
 ]
 
 
@@ -154,11 +155,13 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:8080',
     'https://sepasrvc.intelisis-solutions.com',
-    'https://sepaweb.herokuapp.com'
+    'https://sepaweb.herokuapp.com',
+    'https://intelisisreports.herokuapp.com'
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
     'http://localhost:8080',
     'https://sepasrvc.intelisis-solutions.com',
-    'https://sepaweb.herokuapp.com'
+    'https://sepaweb.herokuapp.com',
+    'https://intelisisreports.herokuapp.com'
 ]
 
