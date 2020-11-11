@@ -28,6 +28,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = [
     '*',
+    '127.0.0.1'
     'sepasrvc.intelisis-solutions.com',
     'sepaweb.herokuapp.com',
     'intelisisreports.herokuapp.com'
@@ -153,12 +154,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 CORS_ORIGIN_ALLOW_ALL = True 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
+    '127.0.0.1',
     'http://localhost:8080',
     'https://sepasrvc.intelisis-solutions.com',
     'https://sepaweb.herokuapp.com',
     'https://intelisisreports.herokuapp.com'
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
+    '127.0.0.1',
     'http://localhost:8080',
     'https://sepasrvc.intelisis-solutions.com',
     'https://sepaweb.herokuapp.com',
