@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Test for init sepa config</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#0099ff" />
+    <link rel="icon" href="{% static 'images/icon.png' %}" />
+    <link rel="apple-touch-icon" href="{% static 'images/icon_round.png' %}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="our-departments">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="our-departments-wrap">
+                        <h2>Verificación de configuraciones generales para SePa</h2>
+
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/servidor.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Habilitar service broker para envió de correos de confirmación</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>El área de infraestructura es quien habilita esta parte, el poder configurar el envió de correos desde intelisis.</p>
+                                        <p>{{ServiceBroker.Label}}</p>
+                                        <p>Estatus: {{ServiceBroker.status}}</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if ServiceBroker.status %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                  </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/correo.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Servidor de correo de configuración sepa</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                      <p>Se encuentra en la configuracion de sepa general.</p>  
+                                      <p>Servidor: {{general.Host}}<br>
+                                      Puerto: {{general.Port}}<br>
+                                      Cuenta {{general.Host_User}}<br>
+                                      Seguridad: {{general.Seguridad}}<br></p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if general.Host != "" and general.Port != "" and general.Host_User != "" and general.Seguridad != "" %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/foto.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Logos de marca</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Esta configuración la encontramos en el menu de sepa congirución por sucursal.</p>
+                                        <p>Logo en app: {{general.UrlLogo}}<br>
+                                        Logo confirmación de pago: {{general.UrlLogomini}}<br></p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if general.UrlLogo != "" and general.UrlLogomini != "" %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/usuario.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Asesores para citas</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Esta conficuración se encuentra en el menu de sepa configuración por sucursal.</p>
+                                        <p>Agente Citas: {{sucursal.sucAgenteServicio}}<br>
+                                        Usuario Citas: {{sucursal.sucUsuarioSepaCS}}<br></p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if sucursal.sucAgenteServicio != "" and sucursal.sucUsuarioSepaCS != "" %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/cronografo.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Jornadas para los asesores asignadas</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                      <p>Este apartado se resuelve dentro de intelisis.</p>
+                                      <ul>
+                                        {% for element in jornadasasesores.result %}
+                                        <li>{{element|first}} : {{element|last}}</li>
+                                        {% endfor %}
+                                      </ul>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if jornadasasesores.result|length > 0 %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/relaciones.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>UEN´s validas para citas de servicio</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Este apartado se administra sobre intelisis.</p>
+                                        <ul>
+                                          {% for element in uens.result %}
+                                          <li>{{element.3}}</li>
+                                          {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if uens.result|length > 0 %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 mb-md-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/geo.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Configuración para la ubicación de la agencia</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                      <p>Esta conficuración se encuentra en el menu de sepa configuración por sucursal.</p>
+                                      <p>Dirección: {{address.direccion}}<br>
+                                      Latitud: {{address.latitud}}<br>
+                                      Longitud: {{address.longitud}}<br></p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if address.direccion != "" and address.latitud != "" and address.longitud != "" %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 mb-lg-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/numeros.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Situaciones de servicio configuradas</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Este apartado se administra desde sucursales en intelisis.</p>
+                                        <ul>
+                                          {% for element in situaciones.result %}
+                                          <li>{{element.0}}</li>
+                                          {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if situaciones.result|length > 0 %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 mb-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/lista.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Situaciones de servicio seleccionadas para envio de notificaciones</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Este apartado se administra desde el menu sepa en notificaciones.</p>
+                                        <ul>
+                                          {% for element in situaciones.result %}
+                                          <li>{{element.0}} : {{element.1}}</li>
+                                          {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if situaciones.result|length > 0 %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 mb-md-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/notificacion.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Mensajes de situaciones de servicio personalizados</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Este apartado se administra desde el menu sepa en notificaciones.</p>
+                                        <ul>
+                                          {% for element in situaciones.result %}
+                                          <li>{{element.0}} : {{element.2}}</li>
+                                          {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      {% if situaciones.result|length > 0 %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                      {% else %}
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                      {% endif %}
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 mb-lg-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/correo.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Configuración de correo por defecto</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Este apartado se configura desde empresa en configuraciones de correo.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 mb-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/correo.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Configuración de correo para asesores de servicio</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Esta configuración se carga en el catalogo de cuentas de asesores.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/ok.gif' %}" alt="">
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 mb-0">
+                                <div class="our-departments-cont">
+                                    <header class="entry-header d-flex flex-wrap align-items-center">
+                                        <img src="{% static 'images/12176278751552302090-128.png' %}" width="40px" height="40px" alt="">
+
+                                        <h3>Configuración de envió de facturas automatico</h3>
+                                    </header>
+
+                                    <div class="entry-content">
+                                        <p>Este apartado de administra en el catalogo de cuentas de los clientes, en su correo y en el alta de un contacto con su correo y envio de cfdi habilitado.</p>
+                                    </div>
+
+                                    <footer class="entry-footer">
+                                      <img style="width:60px;height:60px;border-radius:28px" src="{% static 'images/cancel.gif' %}" alt="">
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8 col-lg-8">
+                        <div class="foot-about">
+                            <h2><a href="#"><img src="{% static 'images/icon_round.png' %}" alt=""></a></h2>
+
+                            <p>SePa Intelisis, la app que permite conocer el estado de tu orden de servicio, desde que ingresa la unidad al taller hasta el cierre de la orden. En cualquier momento tendrás a la mano la cotización para que tú tengas el control. En caso de que se detecte un hallazgo en la inspección de tu unidad se te notificará para autorización del trabajo extra, Paga tu orden con diferentes métodos digitales desde la App y recoge tu unidad, además, podrás solicitar un citas para diversos tipos de servicio y consultar tu historial de visitas.</p>
+
+                            <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados <a href="https://intelisis.com/automotriz.html" target="_blank">INTELISIS SOLUTIONS</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div><!-- .foot-about -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-4 col-lg-4 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <h2>Contacto</h2>
+
+                            <ul class="p-0 m-0">
+                                <li><span>Phone:</span>+52 443 333 2537</li>
+                                <li><span>Email:</span>intelisisapps@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-6 mt-5 mt-md-0">
+                        <div class="foot-links">
+                            <h2><a href="https://intelisis.com/aviso-de-privacidad.html">Aviso de privacidad</a></h2>
+                        </div><!-- .foot-links -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+    </footer><!-- .site-footer -->
+
+    <script type='text/javascript' src="{% static 'js/jquery.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.collapsible.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/swiper.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/circle-progress.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.countTo.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.barfiller.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

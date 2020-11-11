@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Stacked - Free CSS Template</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+        <style type="text/css">body {font-family: 'Roboto', sans-serif;}p {font-size: 13px;line-height: 26px;}ul {list-style-type: none;padding: 0; margin: 0;}.panel {margin: 0; min-height: 100vh;display: -webkit-box;  display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center; -ms-flex-pack: center;justify-content: center;  overflow: hidden;}.panel p:last-child {margin-bottom: 0;}.b-blue {margin-bottom: -2px;background-image: url(../img/first-bg.png);background-repeat: no-repeat;background-size: cover;width: 100%;overflow: hidden;background-attachment: fixed;}.home-content {	height: 90%;	background-color: rgba(167, 179, 195, 0.1);	padding: 0px 6%;	position: relative;	margin: 1% auto 0 auto;}.home-content h1 {	padding-top: 10%;	font-size: 32px;	text-transform: uppercase;	color: #fff;font-weight: 300;}.home-content h1 em {	margin-right: 20px;	font-size: 60px;	font-style: normal;	font-weight: 800;}.home-content .home-box-content { margin-top: 4%;	background-color: #455871;	position: relative;	right: -100px;padding: 30px;	display: inline-block;}.home-content .left-text {	float: left;width: 60%; }.home-content .left-text h4 {	display: inline-block;	padding-bottom: 5px;	font-size: 22px;	color: #fff;	font-weight: 400;	text-transform: uppercase;	letter-spacing: 1px;	margin-top: 0px;	margin-bottom: 10px;	border-bottom: 2px solid #fff;}.home-content .left-text h4 em {	color: #fa5252;	font-style: normal;}.home-content .left-text p {	color: #fff;	margin-bottom: 25px;}.home-content .right-image {float: right;}</style>
+        <style>
+          .img-logo{
+            display: inline-block;
+            float: left;
+            margin-top: 15px;
+            width: 40%;
+            height: 200px;
+          }
+          .title{
+            display: inline-block;
+            float: left;
+            width: 60%;
+            height: 200px;
+          }
+          .contenido-header{
+            display: inline-block;
+          }
+        </style>
+    </head>
+    <body>
+        <section class="panel b-blue" >
+          <article>
+            <div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2">
+                    <div class="home-content">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+                          <img src="http://itcceverautocirc.intelisis-solutions.com:8080/icon.png" alt="">
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-lg-8 col-xl-8">
+                          <h1 style="font-size: 44px;text-transform: none;color:#455871">Confirmación de Cita de Servicio</h1>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 style="text-transform: none;color:#333">Estimado <strong style="color: black;">{{ mail.Nombre }}</strong></h4>
+                        <h4 style="margin-top: 25px;">Su cita de servicio generada a través de la App SePa ha sido agendada con exito.</h4>
+                        <h4 style="margin-top: 25px;">Favor de Asistir a la agencia {{ mail.Agencia }} con 15 min de anticipacion a la hora establecida.</h4>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-8 col-xl-8 col-lg-offset-2 col-xl-offset-2">
+                          <div style="width: 100%;background-color: royalblue;padding: 0px;margin-bottom: 10px;">
+                            <div style="height: 24px;background-color: rgb(77, 77, 77);color: #fff;padding-left: 30%;font-size: 16px;">
+                              DETALLE DE CITA
+                            </div>
+                            <div style="height: 24px;background-color: #fff;color: rgb(77, 77, 77);padding-left: 1%;font-size: 15px;">
+                              <div style="width: 30%;display: inline-block;">
+                                Movimiento:
+                              </div>
+                              <div style="width: 68%;display: inline-block;">
+                                {{ mail.Mov }}
+                              </div>
+                            </div>
+                            <div style="height: 24px;background-color: rgb(223, 223, 223);color: rgb(77, 77, 77);padding-left: 1%;font-size: 15px;">
+                              <div style="width: 30%;display: inline-block;">
+                                Folio:
+                              </div>
+                              <div style="width: 68%;display: inline-block;">
+                                {{ mail.Folio }}
+                              </div>
+                            </div>
+                            <div style="height: 24px;background-color: #fff;color: rgb(77, 77, 77);padding-left: 1%;font-size: 15px;">
+                              <div style="width: 30%;display: inline-block;">
+                                Fecha:
+                              </div>
+                              <div style="width: 68%;display: inline-block;">
+                                {{ mail.Fecha }}
+                              </div>
+                            </div>
+                            <div style="height: 24px;background-color: rgb(223, 223, 223);color: rgb(77, 77, 77);padding-left: 1%;font-size: 15px;">
+                              <div style="width: 30%;display: inline-block;">
+                                Hora:
+                              </div>
+                              <div style="width: 68%;display: inline-block;">
+                                {{ mail.Hora }}
+                              </div>
+                            </div>
+                            <div style="height: 24px;background-color: #fff;color: rgb(77, 77, 77);padding-left: 1%;font-size: 15px;">
+                              <div style="width: 30%;display: inline-block;">
+                                Asesor: 
+                              </div>
+                              <div style="width: 68%;display: inline-block;">
+                                {{ mail.Asesor }}
+                              </div>
+                            </div>
+                            <!--<div class="right-image">
+                              <img src="img/right-home-image.png" alt="">
+                            </div>-->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-8 col-xl-8 col-lg-offset-2 col-xl-offset-2">
+                          <p style="font-size: 10;line-height: 14px;color:rgba(89, 89, 90, 0.9)">La información contenida en este correo electrónico es confidencial y para uso exclusivo de la(s) persona(s) a quien(es) va dirigida. Está prohibido difundir la información aquí contenida. Si la ha recibido este correo por error le suplicamos notificar inmediatamente al remitente. Su lectura, recepción y retransmisión es responsabilidad del receptor. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+    </body>
+</html>

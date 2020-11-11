@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <title>Reporte</title>
+        <meta name="theme-color" content="#0099ff" />
+        <link rel="icon" href="{% static 'images/icon.png' %}" />
+        <link rel="apple-touch-icon" href="{% static 'images/icon_round.png' %}" />
+        {% for element in css %}
+            <link rel="stylesheet" href="{% static element %}">
+        {% endfor %}
+    </head>
+    <body class="gray-bg" style="overflow-x: auto;" cz-shortcut-listen="true">
+        <div class="book" >
+            <div class="page" id="firstpage" >
+                <div id="page-wrapper">
+                    <div class="headerPage">
+                        ++
+                    </div>
+                    <div id="all-container" style="padding-left: 14px;padding-right: 14px;">
+                        Hola ++
+                    </div>
+                    <div class="futer">
+                        ++
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

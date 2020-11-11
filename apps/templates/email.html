@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Stacked - Free CSS Template</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+        <style type="text/css">body {font-family: 'Roboto', sans-serif;}p {font-size: 13px;line-height: 26px;}ul {list-style-type: none;padding: 0; margin: 0;}.panel {margin: 0; min-height: 100vh;display: -webkit-box;  display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center; -ms-flex-pack: center;justify-content: center;  overflow: hidden;}.panel p:last-child {margin-bottom: 0;}.b-blue {margin-bottom: -2px;background-image: url(../img/first-bg.png);background-repeat: no-repeat;background-size: cover;width: 100%;overflow: hidden;background-attachment: fixed;}.home-content {	height: 90%;	background-color: rgba(45, 58, 75, 0.5);	padding: 0px 6%;	position: relative;	margin: 1% auto 0 auto;}.home-content h1 {	padding-top: 10%;	font-size: 32px;	text-transform: uppercase;	color: #fff;font-weight: 300;}.home-content h1 em {	margin-right: 20px;	font-size: 60px;	font-style: normal;	font-weight: 800;}.home-content .home-box-content { margin-top: 4%;	background-color: #455871;	position: relative;	right: -100px;padding: 30px;	display: inline-block;}.home-content .left-text {	float: left;width: 60%; }.home-content .left-text h4 {	display: inline-block;	padding-bottom: 5px;	font-size: 22px;	color: #fff;	font-weight: 400;	text-transform: uppercase;	letter-spacing: 1px;	margin-top: 0px;	margin-bottom: 10px;	border-bottom: 2px solid #fff;}.home-content .left-text h4 em {	color: #fa5252;	font-style: normal;}.home-content .left-text p {	color: #fff;	margin-bottom: 25px;}.home-content .right-image {float: right;}</style>
+    </head>
+    <body>
+        <section class="panel b-blue" >
+          <article>
+            <div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2">
+                    <div class="home-content">
+                      <div>
+                        <h1><em>Estimado </em>{{ mail.name }} </h1>
+                        <h2>El pago por el {{ mail.Movimiento }} con folio: {{ mail.Folio }} fue autorizado, muy pronto se genera su factura por parte de {{ mail.Sucursal }}. </h2>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="home-box-content">
+                            <div class="left-text">
+                              <h4><em>Detalle de Pago</em></h4>
+                                <li>Asesor de Agencia: {{ mail.Agente }} </li>
+                                <li>Monto: {{ mail.Monto }} </li>
+                                <!--<li>Comision: {{ mail.Comision }} </li>-->
+                                <li>IVA: {{ mail.iva }} </li>
+                            </div>
+                            <!--<div class="right-image">
+                              <img src="img/right-home-image.png" alt="">
+                            </div>-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+    </body>
+</html>

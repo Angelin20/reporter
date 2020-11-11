@@ -1,0 +1,342 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #fafafa;
+  font: 10pt "Tahoma";
+  min-width: 297mm;
+  padding-top:20px;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+[contenteditable="true"] {
+  background-color: LightGrey;
+}
+img {
+  width: 100%;
+}
+.pageprint {
+  position: relative;
+  width: 297mm;
+  min-height: 382mm;
+  max-height: 382mm;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  overflow: hidden;
+  background-size: 100% auto;
+  background-position-y: 911px;
+}
+.page {
+  position: relative;
+  width: 297mm;
+  min-height: 384mm;
+  max-height: 384mm;
+  background: white;
+  /*border: 1px #d3d3d3 solid;*/
+  background-repeat: no-repeat;
+  background-position: bottom;
+  overflow: hidden;
+  background-size: 100% auto;
+  background-position-y: 911px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding:15px;
+  margin-top: 10px;
+}
+.headerPage {
+  margin-top: 0px;
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 155px;
+}
+.headerPage img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*opacity: .5;*/
+  top: 0;
+  left: 0;
+  bottom: -29px;
+}
+.all-container{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin-top: 155px;
+}
+.futer {
+  margin-bottom: 0px;
+  position: absolute;
+  z-index: 0;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 155px;
+}
+.futer img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*opacity: .5;*/
+  top: 0;
+  left: 0;
+  bottom: -29px;
+}
+.book {
+  width: 297.5mm;
+  margin: auto;
+  margin-bottom: 10mm;
+}
+#root {
+  margin-top: 100px;
+}
+.icono-menu{
+  font-weight:bold;
+  font-size:18px;
+}
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.busqueda{
+  position: fixed;
+  top:53px;
+  padding-left: 8%;
+  padding-right: 8%;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  width: 100%;
+  border: 1px solid rgba(34,36,38,.15);
+  z-index: 90;
+  height: 52px;
+}
+.busqueda .form{
+  margin-top: 0px;
+  height: 50px;
+}
+.busqueda .form .grid{
+  margin: 0px;
+  height: 50px;
+}
+.busqueda .form .grid .column{
+  padding:6px 3px 3px 3px;
+  border: 1px solid rgba(34,36,38,.1);
+  height: 51px;
+}
+
+.iconofiltro{
+  font-weight:bold;
+  color: dodgerblue;
+  font-size:24px;
+}
+
+.iconofiltro .icon{
+  margin-top: 8px;
+  margin-left: 17px;
+}
+
+.cell-right{
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+
+.cell{
+  border: 1px solid black;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+
+@page {
+  size: letter;
+  margin: 0;
+}
+@media print {
+  .morris-hover.morris-default-style,
+  .no_print {
+    display: none !important;
+  }
+  /** {margin:0;padding:0}*/
+  @page {
+    size: letter;
+    margin: 0mm;
+  }
+  html,
+  body {
+    height: 100%;
+    padding-top: 0px;
+  }
+  html {
+    background-color: red;
+  }
+  body {
+    background-color: green;
+  }
+  .page {
+    margin: 0 auto;
+  }
+  .margin {
+    margin: 0 auto;
+    margin-top: 0px;
+  }
+  #root {
+    margin-top: 0px;
+  }
+  .book {
+    margin-top: 0px;
+    margin: auto;
+  }
+  [contenteditable="true"] {
+    background-color: LightGrey;
+  }
+  .futer {
+    margin-bottom: 0px;
+  }
+  .menu {
+    display: none !important;
+  }
+  .piePagina {
+    display: none !important;
+  }
+  .popup,
+  .popup .content,
+  .visible {
+    opacity: 0;
+  }
+  .headerPage img {
+    display: block;
+  }
+  #all-container{
+    margin-top: 155px;
+  }
+  .futer img {
+    display: block;
+  }
+}
+@media screen and (max-width: 720px) {
+  .inv-min{
+    display: none;
+    width: 0px;
+    opacity: 0.0;
+  }
+  .icono-menu{
+    font-size:14px;
+  }
+  .ui.menu .item{
+    padding: .52857143em 0.74285714em;
+  }
+  .busqueda{
+    top:42px;
+  }
+}
+/* Animation blockpage*/
+.sk-spinner-cube-grid {
+  /*
+   * Spinner positions
+   * 1 2 3
+   * 4 5 6
+   * 7 8 9
+   */
+}
+.sk-spinner-cube-grid.sk-spinner {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+.sk-spinner-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #347ad6;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(1) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(2) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(4) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(5) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(6) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(7) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(8) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-spinner-cube-grid .sk-cube:nth-child(9) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+      -webkit-transform: scale3D(1, 1, 1);
+      transform: scale3D(1, 1, 1);
+  }
+  35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+  }
+}
+@keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+      -webkit-transform: scale3D(1, 1, 1);
+      transform: scale3D(1, 1, 1);
+  }
+  35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+  }
+}
+
+.loader_cover{
+  width     : 60px !important;
+  height    : 60px !important;
+}
+
+.loaderText{
+  padding     : 0px;
+  color        : rgba(255, 255, 255, 0.8);
+  width       : 15% !important;
+  height      : 5% !important;
+  font-size   : 13px !important;
+  /*text-shadow: 4px 1px 2px rgba(255, 255, 255, 0.4);*/
+}
+.blockElement{
+  z-index: 9999 !important;
+  border: none !important;
+  background-color: transparent !important;
+}
