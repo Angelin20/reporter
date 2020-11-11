@@ -168,3 +168,5 @@ CORS_ORIGIN_REGEX_WHITELIST = [
     'https://intelisisreports.herokuapp.com'
 ]
 
+import django_heroku
+django_heroku.settings(locals())
