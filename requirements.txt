@@ -1,3 +1,4 @@
+git+git://github.com/johnfraney/wkhtmltopdf-pack.git
 wheel==0.33.6
 django==2.2.8
 djangorestframework==3.9.2
