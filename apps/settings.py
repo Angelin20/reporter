@@ -147,26 +147,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
+STATIC_URL = 'http://localhost/static/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 CORS_ORIGIN_ALLOW_ALL = True 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
-    '127.0.0.1',
+    'http://127.0.0.1',
+    'http://localhost',
     'http://localhost:8080',
     'https://sepasrvc.intelisis-solutions.com',
     'https://sepaweb.herokuapp.com',
     'https://intelisisreports.herokuapp.com'
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
-    '127.0.0.1',
+    'http://127.0.0.1',
+    'http://localhost',
     'http://localhost:8080',
     'https://sepasrvc.intelisis-solutions.com',
     'https://sepaweb.herokuapp.com',
     'https://intelisisreports.herokuapp.com'
 ]
 
-import django_heroku
-django_heroku.settings(locals())
+#import django_heroku
+#django_heroku.settings(locals())

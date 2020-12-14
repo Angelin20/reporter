@@ -53,10 +53,8 @@ def header(titulo,css):
         """
     return str(obj)
 
-def footer():
-    obj = """
-        <script></script>
-        """
+def footer(scripts):
+    obj = "<script type='text/javascript'>"+str(scripts)+"</script>"
     return obj
 
 def page(head,container,foot):

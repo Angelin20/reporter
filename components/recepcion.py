@@ -282,3 +282,7 @@ def WRACRN001(conf):
     """
     doc+="</div>"
     return doc
+
+def JAVASCRIPTWRACRN001():
+    doc=""
+    return doc
