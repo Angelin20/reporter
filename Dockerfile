@@ -1,8 +1,15 @@
 FROM python:3.8-alpine
 
-ENV PATH="/scripts:${PATH}"
+RUN apk update && apk add git && apk add python3-dev && apk add build-base postgresql-dev libpq --no-cache --virtual .build-deps
 
-COPY ./requirements.txt /requirements.txt
-RUN apk add --update --no-cache --virtual .tmp gcc libc-dev linux-headers
-RUN pip install -r /requirements.txt
-RUN apk del .tmp
+ENV PYTHONUNBUFFERED 1
+
+WORKDIR /app
+
+ADD . /app
+
+COPY ./requirements.txt ./app/requirements.txt
+
+RUN pip install -r requirements.txt
+
+COPY . /app/
