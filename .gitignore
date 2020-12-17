@@ -2,3 +2,4 @@ env/*
 apps/__pycache__/*
 apps/components/__pycache__/*
 apps/reports/__pycache__/*
+.vscode/*
