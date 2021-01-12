@@ -91,6 +91,7 @@ class getPDF(APIView):
             html = t.render(c)
             return HttpResponse(html)
         else:
+            configkit = pdfkit.configuration(wkhtmltopdf='C:/wkhtmltopdf/bin/wkhtmltopdf.exe')
             filepdf=pdfkit.from_string(
                 base.body(
                     base.header(settingspdf["name"],{}),
@@ -102,7 +103,7 @@ class getPDF(APIView):
                     base.footer(""),
                     0,
                     options["html"]
-                ), False, options=options["pdf"],css=csspdf)
+                ), False, options=options["pdf"],css=csspdf, configuration=configkit)
             response = HttpResponse(filepdf,content_type='application/pdf')
             response['Content-Disposition'] = "attachment; filename=" + settingspdf["name"]+".pdf"
             return response
@@ -131,6 +132,7 @@ class getPDF(APIView):
             except OSError as e:
                 if e.errno != errno.EEXIST:
                     raise
+            configkit = pdfkit.configuration(wkhtmltopdf='C:/wkhtmltopdf/bin/wkhtmltopdf.exe')
             pdfkit.from_string(
                 base.body(
                     base.header(settingspdf["name"],{}),
@@ -142,7 +144,7 @@ class getPDF(APIView):
                     base.footer(""),
                     0,
                     options["html"]
-                ), settingspdf["path"]+"/"+settingspdf["name"]+'.pdf', options=options["pdf"],css=csspdf)
+                ), settingspdf["path"]+"/"+settingspdf["name"]+'.pdf', options=options["pdf"],css=csspdf, configuration=configkit)
         
         #Validar la variable dwn para saber si viene 1 para visualizar y 0 u otro caracter para descargar
         if settingspdf["dwn"] == "1":
@@ -164,6 +166,7 @@ class getPDF(APIView):
             html = t.render(c)
             return HttpResponse(html)
         else:
+            configkit = pdfkit.configuration(wkhtmltopdf='C:/wkhtmltopdf/bin/wkhtmltopdf.exe')
             filepdf=pdfkit.from_string(
                 base.body(
                     base.header(settingspdf["name"],{}),
@@ -175,7 +178,7 @@ class getPDF(APIView):
                     base.footer(""),
                     0,
                     options["html"]
-                ), False, options=options["pdf"],css=csspdf)
+                ), False, options=options["pdf"],css=csspdf, configuration=configkit)
             response = HttpResponse(filepdf,content_type='application/pdf')
             response['Content-Disposition'] = "attachment; filename=" + settingspdf["name"]+".pdf"
             return response

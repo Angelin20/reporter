@@ -29,9 +29,7 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = [
     '*',
     '127.0.0.1'
-    'sepasrvc.intelisis-solutions.com',
-    'sepaweb.herokuapp.com',
-    'intelisisreports.herokuapp.com'
+    'apiintelisis.intelisis-solutions.com:8443'
 ]
 
 
@@ -146,9 +144,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 #STATIC_URL = '/static/'
-STATIC_URL = 'http://localhost/static/'
+STATIC_URL = 'https://intelisissepa.herokuapp.com/reporter/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -171,5 +169,6 @@ CORS_ORIGIN_REGEX_WHITELIST = [
     'https://intelisisreports.herokuapp.com'
 ]
 
+WKHTMLTOPDF_CMD = 'C:/wkhtmltopdf/bin/wkhtmltopdf'
 #import django_heroku
 #django_heroku.settings(locals())
