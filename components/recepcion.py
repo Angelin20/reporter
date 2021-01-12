@@ -74,7 +74,7 @@ def options(opt):
     configs["html"] = switcherhtml.get(opt,"Opción no encontrada")
     return configs
 
-def WRACRN001(conf):
+def WRACRN001(conf,vin,firma):
     doc="<div class='all-container' style='"+conf["allcontainer"]+"'>"
     doc+="""
         <div class="container">
@@ -84,8 +84,14 @@ def WRACRN001(conf):
                 </div>
                 <div style="display:-webkit-box;width: 60.333333%;padding-right: 5px;padding-left: 5px;">
                     <div class="cell">-</div>
-                    <div class="cell-right">-</div>
-                    <div class="cell-right">-</div>
+                    <div class="cell-right">
+                    """
+    doc+=str(vin)[0,1]
+    doc+="""</div>
+                    <div class="cell-right">
+                    """
+    doc+=str(vin)[0,1]
+    doc+="""</div>
                     <div class="cell-right">-</div>
                     <div class="cell-right">-</div>
                     <div class="cell-right">-</div>
@@ -208,7 +214,7 @@ def WRACRN001(conf):
                         <div style="width: 100%;height:46px;padding:5px;display:-webkit-box;text-align:left;border-bottom:1px #010101 solid;">
                             <div style="width: 25.333333%;display: block;text-align:center">
     """
-    doc+="<img src='"+settings.STATIC_URL+"images/firma.jpg' style='"+str(conf["imgsign"])+"'>"
+    doc+="<img src='"+firma+"' style='"+str(conf["imgsign"])+"'>"
     doc+="""                
                             </div>
                             <div style="width: 54.333333%;padding-top:18px;display: block;text-align:center">
@@ -244,7 +250,7 @@ def WRACRN001(conf):
                         <div style="width: 100%;height:46px;padding:5px;display:-webkit-box;text-align:left;border-bottom:1px #010101 solid;">
                             <div style="width: 25.333333%;display: block;text-align:center">
     """
-    doc+="<img src='"+settings.STATIC_URL+"images/firma.jpg' style='"+str(conf["imgsign"])+"'>"
+    doc+="<img src='"+firma+"' style='"+str(conf["imgsign"])+"'>"
     doc+="""                
                             </div>
                             <div style="width: 54.333333%;padding-top:18px;display: block;text-align:center">

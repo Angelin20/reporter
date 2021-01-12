@@ -121,7 +121,7 @@ class getPDF(APIView):
         options = {}
         if settingspdf["name"][0:3] == "WRA":
             options = recepcion.options(settingspdf["opt"])
-            container=getattr(recepcion, settingspdf["name"])(options["html"])
+            container=getattr(recepcion, settingspdf["name"])(options["html"],request.data["vin"],request.data["garantia"]) #En esta linea se obtiene la funcion constructora
             javascript=getattr(recepcion, "JAVASCRIPT"+settingspdf["name"])()
         css = ['css/base.css']
         csspdf = ['static/css/base.css']
