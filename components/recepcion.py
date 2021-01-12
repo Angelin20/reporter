@@ -192,7 +192,7 @@ def WRACRN001(conf,vin,firma):
                         </div>
                         <div style="display:-webkit-box;">
                             <div style="width: 5.666667%;padding: 5px;display: block;">
-                                <i class="far fa-square" style="font-size:28px"></i>
+                                <i class="far fa-check-square" style="font-size:28px"></i>
                             </div>
                             <div style="width: 94.333333%;padding-top:8px;display: block;font-size:22px">
                                 Cero deducible
