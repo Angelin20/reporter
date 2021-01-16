@@ -50,7 +50,7 @@ def options(opt):
             'footerR1':'width:100%;text-align:center;margin-bottom:20px;font-size:12px',
             'footerR2':'width:100%;',
             'allcontainer':'margin-left:4%;margin-right:4%;width: 92%;padding-left: 14px;padding-right: 14px;',
-            'imgsign':'width:172px;height:36px;position:relative;'
+            'imgsign':'width:185px;height:49px;position:relative;'
         },
         "2":{
             'stylepage':'width: 297mm;min-height: 489.7mm;max-height: 489.7mm;margin-top: 0px;',
@@ -67,7 +67,7 @@ def options(opt):
             'footerR1':'width:100%;text-align:center;margin-bottom:20px;font-size:12px',
             'footerR2':'width:100%;',
             'allcontainer':'margin-left:4%;margin-right:4%;width: 92%;padding-left: 14px;padding-right: 14px;',
-            'imgsign':'width:172px;height:36px;position:relative;'
+            'imgsign':'width:185px;height:49px;position:relative;'
         }
     }
     configs["pdf"] = switcherpdf.get(opt,"Opción no encontrada")
